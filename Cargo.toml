@@ -1,0 +1,12 @@
+[package]
+name = "merkle-tree-binary"
+version = "0.0.1"
+authors = ["Nazar Mokrynskyi <nazar@mokrynskyi.com>"]
+edition = "2018"
+
+[dependencies]
+
+[dev-dependencies]
+hex = "0.4.0"
+rand = "0.7.3"
+sha1 = "0.6.0"
