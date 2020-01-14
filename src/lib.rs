@@ -16,7 +16,7 @@ impl<'items> Tree<'items> {
         tree
     }
 
-    fn get_proof(&self, target_item: &[u8]) -> Result<Vec<u8>, ()> {
+    pub fn get_proof(&self, target_item: &[u8]) -> Result<Vec<u8>, ()> {
         for (i, item) in self.items.iter().enumerate() {
             if item.as_slice().cmp(target_item) == Ordering::Equal {
                 return Ok(self.get_proof_for(i));
@@ -26,7 +26,7 @@ impl<'items> Tree<'items> {
         Err(())
     }
 
-    fn get_root(&self) -> &[u8] {
+    pub fn get_root(&self) -> &[u8] {
         return self.tree.last().unwrap().first().unwrap();
     }
 
