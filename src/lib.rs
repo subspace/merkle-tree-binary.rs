@@ -104,19 +104,19 @@ impl<'items> Tree<'items> {
         for i in (0..proof.len()).step_by(proof_step) {
             let mut item = proof[(i + 1)..(i + proof_step)].to_vec();
             // TODO: This is inefficient, we shouldn't require mutable things here just to compute hash
-            println!("Byte {}", proof[i]);
+            // println!("Byte {}", proof[i]);
             target_item = hash_function(if proof[i] == 1 {
                 item.append(&mut target_item);
-                println!("item {:?}", &item);
+                // println!("item {:?}", &item);
                 &item
             } else {
                 target_item.append(&mut item);
-                println!("target item {:?}", &target_item);
+                // println!("target item {:?}", &target_item);
                 &target_item
             });
         }
 
-        println!("cmp\n{:?}\n{:?}", &root, &target_item);
+        // println!("cmp\n{:?}\n{:?}", &root, &target_item);
         return root.cmp(&target_item) == Ordering::Equal;
     }
 }
