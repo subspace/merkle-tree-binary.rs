@@ -52,7 +52,7 @@ impl<'items> Tree<'items> {
         self.build_tree(&new_items, hash_function);
     }
 
-    pub fn get_proof_for(&self, item_index: usize) -> Vec<u8> {
+    fn get_proof_for(&self, item_index: usize) -> Vec<u8> {
         let mut proof = Vec::<u8>::new();
         let tree = &self.tree;
         let levels = tree.len() - 1;
